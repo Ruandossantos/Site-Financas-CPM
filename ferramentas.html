@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ferramentas financeiras gratuitas para ajudar você a tomar melhores decisões de investimento e organizar suas finanças.">
+    <title>Ferramentas Financeiras - InvestMaster</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Invest<span>Master</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="artigos.html">Artigos</a></li>
+                    <li><a href="ferramentas.html" class="active">Ferramentas</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner da Página -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Ferramentas Financeiras</h1>
+                <p>Utilize nossas calculadoras e simuladores para tomar decisões financeiras mais inteligentes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ferramentas Principais -->
+    <section class="tools-main-section">
+        <div class="container">
+            <div class="tools-grid-large">
+                <!-- Calculadora de Juros Compostos -->
+                <div class="tool-card-large" id="calculadora-juros-compostos">
+                    <div class="tool-header">
+                        <div class="tool-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h2>Calculadora de Juros Compostos</h2>
+                    </div>
+                    <div class="tool-description">
+                        <p>Descubra o poder dos juros compostos e planeje seus investimentos de longo prazo. Calcule quanto seu dinheiro pode render ao longo do tempo.</p>
+                    </div>
+                    <div class="tool-content">
+                        <form id="juros-compostos-form" class="calculator-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="valor-inicial">Valor Inicial (R$)</label>
+                                    <input type="number" id="valor-inicial" min="0" step="100" value="1000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="aporte-mensal">Aporte Mensal (R$)</label>
+                                    <input type="number" id="aporte-mensal" min="0" step="100" value="200" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="taxa-juros">Taxa de Juros (% a.a.)</label>
+                                    <input type="number" id="taxa-juros" min="0" step="0.1" value="10" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="periodo">Período (anos)</label>
+                                    <input type="number" id="periodo" min="1" max="50" value="10" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Calcular</button>
+                        </form>
+                        
+                        <div class="calculator-result" id="juros-compostos-result">
+                            <div class="result-header">
+                                <h3>Resultado</h3>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-item">
+                                    <span class="result-label">Valor Total Acumulado:</span>
+                                    <span class="result-value" id="valor-total">R$ 0,00</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Total Investido:</span>
+                                    <span class="result-value" id="total-investido">R$ 0,00</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Juros Acumulados:</span>
+                                    <span class="result-value" id="juros-acumulados">R$ 0,00</span>
+                                </div>
+                            </div>
+                            <div class="result-chart">
+                                <canvas id="juros-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Espaço para anúncio horizontal -->
+                <div class="ad-space ad-space-horizontal">
+                    <div class="ad-placeholder">
+                        <span>Anúncio</span>
+                    </div>
+                </div>
+                
+                <!-- Simulador de Carteira -->
+                <div class="tool-card-large" id="simulador-carteira">
+                    <div class="tool-header">
+                        <div class="tool-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h2>Simulador de Carteira</h2>
+                    </div>
+                    <div class="tool-description">
+                        <p>Monte uma carteira diversificada e acompanhe seu desempenho ao longo do tempo. Visualize a distribuição dos seus investimentos por classe de ativos.</p>
+                    </div>
+                    <div class="tool-content">
+                        <form id="simulador-carteira-form" class="calculator-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="valor-total-carteira">Valor Total da Carteira (R$)</label>
+                                    <input type="number" id="valor-total-carteira" min="1000" step="1000" value="100000" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label>Distribuição da Carteira (%)</label>
+                                    <div class="slider-group">
+                                        <div class="slider-item">
+                                            <label for="renda-fixa">Renda Fixa</label>
+                                            <input type="range" id="renda-fixa" min="0" max="100" value="40" class="slider">
+                                            <span class="slider-value">40%</span>
+                                        </div>
+                                        <div class="slider-item">
+                                            <label for="acoes">Ações</label>
+                                            <input type="range" id="acoes" min="0" max="100" value="30" class="slider">
+                                            <span class="slider-value">30%</span>
+                                        </div>
+                                        <div class="slider-item">
+                                            <label for="fiis">Fundos Imobiliários</label>
+                                            <input type="range" id="fiis" min="0" max="100" value="15" class="slider">
+                                            <span class="slider-value">15%</span>
+                                        </div>
+                                        <div class="slider-item">
+                                            <label for="cripto">Criptomoedas</label>
+                                            <input type="range" id="cripto" min="0" max="100" value="10" class="slider">
+                                            <span class="slider-value">10%</span>
+                                        </div>
+                                        <div class="slider-item">
+                                            <label for="outros">Outros</label>
+                                            <input type="range" id="outros" min="0" max="100" value="5" class="slider">
+                                            <span class="slider-value">5%</span>
+                                        </div>
+                                    </div>
+                                    <div class="total-allocation">
+                                        <span>Total: </span>
+                                        <span id="total-allocation">100%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Simular Carteira</button>
+                        </form>
+                        
+                        <div class="calculator-result" id="carteira-result">
+                            <div class="result-header">
+                                <h3>Distribuição da Carteira</h3>
+                            </div>
+                            <div class="result-chart">
+                                <canvas id="carteira-chart"></canvas>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Classe de Ativo</th>
+                                                <th>Porcentagem</th>
+                                                <th>Valor (R$)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="carteira-table-body">
+                                            <!-- Preenchido via JavaScript -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Simulador de Financiamento -->
+                <div class="tool-card-large" id="simulador-financiamento">
+                    <div class="tool-header">
+                        <div class="tool-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h2>Simulador de Financiamento Imobiliário</h2>
+                    </div>
+                    <div class="tool-description">
+                        <p>Compare diferentes opções de financiamento imobiliário e encontre a melhor para você. Calcule prestações, juros e valor total a ser pago.</p>
+                    </div>
+                    <div class="tool-content">
+                        <form id="financiamento-form" class="calculator-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="valor-imovel">Valor do Imóvel (R$)</label>
+                                    <input type="number" id="valor-imovel" min="50000" step="10000" value="500000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="entrada">Valor da Entrada (R$)</label>
+                                    <input type="number" id="entrada" min="0" step="10000" value="100000" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="taxa-financiamento">Taxa de Juros (% a.a.)</label>
+                                    <input type="number" id="taxa-financiamento" min="0" step="0.1" value="9" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="prazo">Prazo (anos)</label>
+                                    <input type="number" id="prazo" min="1" max="35" value="30" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sistema">Sistema de Amortização</label>
+                                    <select id="sistema" required>
+                                        <option value="sac">SAC - Sistema de Amortização Constante</option>
+                                        <option value="price">Price - Tabela Price</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Calcular</button>
+                        </form>
+                        
+                        <div class="calculator-result" id="financiamento-result">
+                            <div class="result-header">
+                                <h3>Resultado do Financiamento</h3>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-item">
+                                    <span class="result-label">Valor Financiado:</span>
+                                    <span class="result-value" id="valor-financiado">R$ 0,00</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Primeira Prestação:</span>
+                                    <span class="result-value" id="primeira-prestacao">R$ 0,00</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Última Prestação:</span>
+                                    <span class="result-value" id="ultima-prestacao">R$ 0,00</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Total de Juros:</span>
+                                    <span class="result-value" id="total-juros">R$ 0,00</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Valor Total a Pagar:</span>
+                                    <span class="result-value" id="total-pagar">R$ 0,00</span>
+                                </div>
+                            </div>
+                            <div class="result-chart">
+                                <canvas id="financiamento-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Espaço para anúncio horizontal -->
+                <div class="ad-space ad-space-horizontal">
+                    <div class="ad-placeholder">
+                        <span>Anúncio</span>
+                    </div>
+                </div>
+                
+                <!-- Planejador de Aposentadoria -->
+                <div class="tool-card-large" id="planejador-aposentadoria">
+                    <div class="tool-header">
+                        <div class="tool-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <h2>Planejador de Aposentadoria</h2>
+                    </div>
+                    <div class="tool-description">
+                        <p>Calcule quanto você precisa poupar mensalmente para atingir sua meta de aposentadoria. Planeje seu futuro financeiro com segurança.</p>
+                    </div>
+                    <div class="tool-content">
+                        <form id="aposentadoria-form" class="calculator-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="idade-atual">Idade Atual</label>
+                                    <input type="number" id="idade-atual" min="18" max="70" value="30" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="idade-aposentadoria">Idade para Aposentadoria</label>
+                                    <input type="number" id="idade-aposentadoria" min="45" max="80" value="65" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="renda-mensal-desejada">Renda Mensal Desejada (R$)</label>
+                                    <input type="number" id="renda-mensal-desejada" min="1000" step="500" value="5000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="patrimonio-atual">Patrimônio Atual (R$)</label>
+                                    <input type="number" id="patrimonio-atual" min="0" step="1000" value="50000" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="rentabilidade-esperada">Rentabilidade Esperada (% a.a.)</label>
+                                    <input type="number" id="rentabilidade-esperada" min="0" step="0.5" value="8" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inflacao-estimada">Inflação Estimada (% a.a.)</label>
+                                    <input type="number" id="inflacao-estimada" min="0" step="0.5" value="4" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Calcular</button>
+                        </form>
+                        
+                        <div class="calculator-result" id="aposentadoria-result">
+                            <div class="result-header">
+                                <h3>Resultado do Planejamento</h3>
+                            </div>
+                            <div class="result-content">
+                                <div class="result-item">
+                                    <span class="result-label">Patrimônio Necessário:</span>
+                                    <span class="result-value" id="patrimonio-necessario">R$ 0,00</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Aporte Mensal Necessário:</span>
+                                    <span class="result-value" id="aporte-mensal-necessario">R$ 0,00</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Tempo para Aposentadoria:</span>
+                                    <span class="result-value" id="tempo-aposentadoria">0 anos</span>
+                                </div>
+                            </div>
+                            <div class="result-chart">
+                                <canvas id="aposentadoria-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Outras Ferramentas -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Outras Ferramentas</h3>
+                    <ul class="tools-list">
+                        <li>
+                            <a href="#calculadora-ir">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                                <span>Calculadora de Imposto de Renda</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#comparador-investimentos">
+                                <i class="fas fa-balance-scale"></i>
+                                <span>Comparador de Investimentos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#calculadora-dividendos">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <span>Calculadora de Dividendos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#simulador-previdencia">
+                                <i class="fas fa-user-clock"></i>
+                                <span>Simulador de Previdência Privada</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#calculadora-consorcio">
+                                <i class="fas fa-car"></i>
+                                <span>Calculadora de Consórcio</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Artigos Relacionados -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Artigos Relacionados</h3>
+                    <ul class="related-posts">
+                        <li>
+                            <a href="artigos/juros-compostos-explicados.html">
+                                <div class="post-image">
+                                    <img src="https://via.placeholder.com/100x70" alt="Juros Compostos">
+                                </div>
+                                <div class="post-info">
+                                    <h4>Juros compostos: o oitavo milagre do mundo</h4>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="artigos/diversificacao-carteira.html">
+                                <div class="post-image">
+                                    <img src="https://via.placeholder.com/100x70" alt="Diversificação">
+                                </div>
+                                <div class="post-info">
+                                    <h4>Como diversificar sua carteira de investimentos</h4>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="artigos/financiamento-vs-aluguel.html">
+                                <div class="post-image">
+                                    <img src="https://via.placeholder.com/100x70" alt="Financiamento vs Aluguel">
+                                </div>
+                                <div class="post-info">
+                                    <h4>Financiar ou alugar: qual a melhor opção?</h4>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Espaço para anúncio vertical -->
+                <div class="ad-space ad-space-vertical">
+                    <div class="ad-placeholder">
+                        <span>Anúncio</span>
+                    </div>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="sidebar-widget newsletter-widget">
+                    <h3 class="widget-title">Newsletter</h3>
+                    <p>Receba nossas ferramentas e calculadoras diretamente no seu e-mail.</p>
+                    <form class="sidebar-newsletter-form" id="sidebar-newsletter-form">
+                        <input type="email" placeholder="Seu e-mail" required>
+                        <button type="submit" class="btn btn-primary">Inscrever-se</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Receba conteúdo exclusivo</h2>
+                <p>Inscreva-se em nossa newsletter e receba análises de mercado, dicas de investimentos e conteúdos exclusivos diretamente no seu e-mail.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Seu melhor e-mail" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Inscrever-se</button>
+                </form>
+                <p class="form-disclaimer">Ao se inscrever, você concorda com nossa <a href="politica-privacidade.html">Política de Privacidade</a>.</p>
+            </div>
+            <div class="ad-space ad-space-vertical">
+                <!-- Espaço para anúncio vertical -->
+                <div class="ad-placeholder">
+                    <span>Anúncio</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h2>Invest<span>Master</span></h2>
+                    </div>
+                    <p>Seu portal completo sobre finanças pessoais e investimentos. Conteúdo de qualidade para ajudar você a tomar as melhores decisões financeiras.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="artigos.html">Artigos</a></li>
+                        <li><a href="ferramentas.html">Ferramentas</a></li>
+                        <li><a href="cursos.html">Cursos</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categorias</h3>
+                    <ul class="footer-links">
+                        <li><a href="categoria/renda-fixa.html">Renda Fixa</a></li>
+                        <li><a href="categoria/acoes.html">Ações</a></li>
+                        <li><a href="categoria/fundos-imobiliarios.html">Fundos Imobiliários</a></li>
+                        <li><a href="categoria/criptomoedas.html">Criptomoedas</a></li>
+                        <li><a href="categoria/financas-pessoais.html">Finanças Pessoais</a></li>
+                        <li><a href="categoria/economia.html">Economia</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> contato@investmaster.com.br</li>
+                        <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP - Brasil</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 InvestMaster - Todos os direitos reservados.</p>
+                <ul class="legal-links">
+                    <li><a href="termos-de-uso.html">Termos de Uso</a></li>
+                    <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                    <li><a href="politica-cookies.html">Política de Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/newsletter.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/calculadoras.js"></script>
+</body>
+</html>

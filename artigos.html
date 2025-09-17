@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigos sobre finanças pessoais e investimentos. Aprenda sobre renda fixa, ações, fundos imobiliários e mais.">
+    <title>Artigos - InvestMaster</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Invest<span>Master</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="artigos.html" class="active">Artigos</a></li>
+                    <li><a href="ferramentas.html">Ferramentas</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner da Página -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Artigos</h1>
+                <p>Conteúdo exclusivo sobre finanças pessoais e investimentos para você tomar as melhores decisões.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros de Categorias -->
+    <section class="category-filter">
+        <div class="container">
+            <div class="filter-wrapper">
+                <h2>Filtrar por categoria:</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="renda-fixa">Renda Fixa</button>
+                    <button class="filter-btn" data-category="acoes">Ações</button>
+                    <button class="filter-btn" data-category="fiis">Fundos Imobiliários</button>
+                    <button class="filter-btn" data-category="cripto">Criptomoedas</button>
+                    <button class="filter-btn" data-category="financas">Finanças Pessoais</button>
+                    <button class="filter-btn" data-category="economia">Economia</button>
+                </div>
+            </div>
+            
+            <div class="search-wrapper">
+                <form id="search-form" class="search-form">
+                    <input type="text" id="search-input" placeholder="Buscar artigos...">
+                    <button type="submit" aria-label="Buscar">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Artigos -->
+    <section class="articles-section">
+        <div class="container">
+            <div class="articles-grid-large">
+                <!-- Artigo em Destaque -->
+                <article class="featured-article">
+                    <div class="article-image">
+                        <img src="https://via.placeholder.com/800x400" alt="Planejamento Financeiro">
+                        <span class="category financas">Finanças Pessoais</span>
+                    </div>
+                    <div class="article-content">
+                        <h2>Planejamento financeiro: o guia definitivo para organizar sua vida financeira</h2>
+                        <p class="article-excerpt">Aprenda a criar um plano financeiro eficiente, estabelecer metas realistas e construir um futuro financeiro sólido com este guia completo.</p>
+                        <div class="article-meta">
+                            <span><i class="far fa-clock"></i> 15 min de leitura</span>
+                            <span><i class="far fa-calendar"></i> 20/07/2023</span>
+                            <span><i class="far fa-eye"></i> 1.2k visualizações</span>
+                        </div>
+                        <a href="artigos/planejamento-financeiro-guia-definitivo.html" class="btn btn-primary">Ler artigo completo</a>
+                    </div>
+                </article>
+
+                <!-- Espaço para anúncio horizontal -->
+                <div class="ad-space ad-space-horizontal">
+                    <div class="ad-placeholder">
+                        <span>Anúncio</span>
+                    </div>
+                </div>
+                
+                <!-- Grade de Artigos -->
+                <div class="articles-grid">
+                    <!-- Artigo 1 -->
+                    <article class="article-card" data-category="renda-fixa">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/400x250" alt="Investimentos em Renda Fixa">
+                            <span class="category renda-fixa">Renda Fixa</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Os melhores investimentos em renda fixa para 2023</h3>
+                            <p>Descubra as opções mais rentáveis e seguras para investir seu dinheiro no atual cenário econômico.</p>
+                            <div class="card-meta">
+                                <span><i class="far fa-clock"></i> 10 min de leitura</span>
+                                <span><i class="far fa-calendar"></i> 15/07/2023</span>
+                            </div>
+                            <a href="artigos/renda-fixa-2023.html" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Artigo 2 -->
+                    <article class="article-card" data-category="acoes">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/400x250" alt="Análise de Ações">
+                            <span class="category acoes">Ações</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Como analisar ações com fundamentos sólidos</h3>
+                            <p>Aprenda a identificar empresas com potencial de crescimento através da análise fundamentalista.</p>
+                            <div class="card-meta">
+                                <span><i class="far fa-clock"></i> 12 min de leitura</span>
+                                <span><i class="far fa-calendar"></i> 12/07/2023</span>
+                            </div>
+                            <a href="artigos/analise-acoes.html" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Artigo 3 -->
+                    <article class="article-card" data-category="cripto">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/400x250" alt="Criptomoedas">
+                            <span class="category cripto">Criptomoedas</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Bitcoin e Ethereum: análise de mercado</h3>
+                            <p>Entenda as tendências atuais do mercado de criptomoedas e as perspectivas para os próximos meses.</p>
+                            <div class="card-meta">
+                                <span><i class="far fa-clock"></i> 10 min de leitura</span>
+                                <span><i class="far fa-calendar"></i> 10/07/2023</span>
+                            </div>
+                            <a href="artigos/bitcoin-ethereum-analise.html" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Artigo 4 -->
+                    <article class="article-card" data-category="fiis">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/400x250" alt="Fundos Imobiliários">
+                            <span class="category fiis">FIIs</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Fundos imobiliários: diversificação e renda passiva</h3>
+                            <p>Como montar uma carteira de FIIs para obter renda mensal e diversificar seus investimentos.</p>
+                            <div class="card-meta">
+                                <span><i class="far fa-clock"></i> 8 min de leitura</span>
+                                <span><i class="far fa-calendar"></i> 08/07/2023</span>
+                            </div>
+                            <a href="artigos/fundos-imobiliarios.html" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Artigo 5 -->
+                    <article class="article-card" data-category="financas">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/400x250" alt="Educação Financeira">
+                            <span class="category financas">Finanças Pessoais</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Educação financeira para crianças e adolescentes</h3>
+                            <p>Dicas práticas para ensinar conceitos financeiros importantes desde cedo.</p>
+                            <div class="card-meta">
+                                <span><i class="far fa-clock"></i> 6 min de leitura</span>
+                                <span><i class="far fa-calendar"></i> 05/07/2023</span>
+                            </div>
+                            <a href="artigos/educacao-financeira-criancas.html" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Artigo 6 -->
+                    <article class="article-card" data-category="economia">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/400x250" alt="Economia Global">
+                            <span class="category economia">Economia</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Impactos da política monetária na economia global</h3>
+                            <p>Como as decisões dos bancos centrais afetam os mercados financeiros e a economia mundial.</p>
+                            <div class="card-meta">
+                                <span><i class="far fa-clock"></i> 14 min de leitura</span>
+                                <span><i class="far fa-calendar"></i> 01/07/2023</span>
+                            </div>
+                            <a href="artigos/politica-monetaria-economia.html" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Espaço para anúncio em card -->
+                    <div class="ad-space ad-space-card">
+                        <div class="ad-placeholder">
+                            <span>Anúncio</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Artigo 7 -->
+                    <article class="article-card" data-category="renda-fixa">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/400x250" alt="Tesouro Direto">
+                            <span class="category renda-fixa">Renda Fixa</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Tesouro Direto: guia completo para iniciantes</h3>
+                            <p>Tudo o que você precisa saber para começar a investir no Tesouro Direto de forma segura.</p>
+                            <div class="card-meta">
+                                <span><i class="far fa-clock"></i> 9 min de leitura</span>
+                                <span><i class="far fa-calendar"></i> 28/06/2023</span>
+                            </div>
+                            <a href="artigos/tesouro-direto-iniciantes.html" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Artigo 8 -->
+                    <article class="article-card" data-category="acoes">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/400x250" alt="Dividendos">
+                            <span class="category acoes">Ações</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Estratégias para investir em ações pagadoras de dividendos</h3>
+                            <p>Como construir uma carteira focada em dividendos para gerar renda passiva consistente.</p>
+                            <div class="card-meta">
+                                <span><i class="far fa-clock"></i> 11 min de leitura</span>
+                                <span><i class="far fa-calendar"></i> 25/06/2023</span>
+                            </div>
+                            <a href="artigos/acoes-dividendos.html" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Paginação -->
+                <div class="pagination">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#" class="next">Próximo <i class="fas fa-angle-right"></i></a>
+                </div>
+                
+                <!-- Espaço para anúncio horizontal -->
+                <div class="ad-space ad-space-horizontal">
+                    <div class="ad-placeholder">
+                        <span>Anúncio</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Artigos Populares -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Artigos Populares</h3>
+                    <ul class="popular-posts">
+                        <li>
+                            <a href="artigos/independencia-financeira.html">
+                                <div class="post-image">
+                                    <img src="https://via.placeholder.com/100x70" alt="Independência Financeira">
+                                </div>
+                                <div class="post-info">
+                                    <h4>7 passos para alcançar a independência financeira</h4>
+                                    <span><i class="far fa-eye"></i> 3.5k visualizações</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="artigos/investir-exterior.html">
+                                <div class="post-image">
+                                    <img src="https://via.placeholder.com/100x70" alt="Investimentos no Exterior">
+                                </div>
+                                <div class="post-info">
+                                    <h4>Como investir no exterior com segurança</h4>
+                                    <span><i class="far fa-eye"></i> 2.8k visualizações</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="artigos/reserva-emergencia.html">
+                                <div class="post-image">
+                                    <img src="https://via.placeholder.com/100x70" alt="Reserva de Emergência">
+                                </div>
+                                <div class="post-info">
+                                    <h4>Reserva de emergência: quanto guardar e onde investir</h4>
+                                    <span><i class="far fa-eye"></i> 2.3k visualizações</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Categorias -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Categorias</h3>
+                    <ul class="category-list">
+                        <li><a href="categoria/renda-fixa.html">Renda Fixa <span>(12)</span></a></li>
+                        <li><a href="categoria/acoes.html">Ações <span>(18)</span></a></li>
+                        <li><a href="categoria/fundos-imobiliarios.html">Fundos Imobiliários <span>(9)</span></a></li>
+                        <li><a href="categoria/criptomoedas.html">Criptomoedas <span>(7)</span></a></li>
+                        <li><a href="categoria/financas-pessoais.html">Finanças Pessoais <span>(15)</span></a></li>
+                        <li><a href="categoria/economia.html">Economia <span>(10)</span></a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="sidebar-widget newsletter-widget">
+                    <h3 class="widget-title">Newsletter</h3>
+                    <p>Receba nossos melhores artigos diretamente no seu e-mail.</p>
+                    <form class="sidebar-newsletter-form" id="sidebar-newsletter-form">
+                        <input type="email" placeholder="Seu e-mail" required>
+                        <button type="submit" class="btn btn-primary">Inscrever-se</button>
+                    </form>
+                </div>
+                
+                <!-- Espaço para anúncio vertical -->
+                <div class="ad-space ad-space-vertical">
+                    <div class="ad-placeholder">
+                        <span>Anúncio</span>
+                    </div>
+                </div>
+                
+                <!-- Tags -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Tags Populares</h3>
+                    <div class="tag-cloud">
+                        <a href="#">Investimentos</a>
+                        <a href="#">Poupança</a>
+                        <a href="#">Bolsa de Valores</a>
+                        <a href="#">Aposentadoria</a>
+                        <a href="#">Educação Financeira</a>
+                        <a href="#">Dividendos</a>
+                        <a href="#">Tesouro Direto</a>
+                        <a href="#">Bitcoin</a>
+                        <a href="#">Inflação</a>
+                        <a href="#">Juros</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Receba conteúdo exclusivo</h2>
+                <p>Inscreva-se em nossa newsletter e receba análises de mercado, dicas de investimentos e conteúdos exclusivos diretamente no seu e-mail.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Seu melhor e-mail" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Inscrever-se</button>
+                </form>
+                <p class="form-disclaimer">Ao se inscrever, você concorda com nossa <a href="politica-privacidade.html">Política de Privacidade</a>.</p>
+            </div>
+            <div class="ad-space ad-space-vertical">
+                <!-- Espaço para anúncio vertical -->
+                <div class="ad-placeholder">
+                    <span>Anúncio</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h2>Invest<span>Master</span></h2>
+                    </div>
+                    <p>Seu portal completo sobre finanças pessoais e investimentos. Conteúdo de qualidade para ajudar você a tomar as melhores decisões financeiras.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="artigos.html">Artigos</a></li>
+                        <li><a href="ferramentas.html">Ferramentas</a></li>
+                        <li><a href="cursos.html">Cursos</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categorias</h3>
+                    <ul class="footer-links">
+                        <li><a href="categoria/renda-fixa.html">Renda Fixa</a></li>
+                        <li><a href="categoria/acoes.html">Ações</a></li>
+                        <li><a href="categoria/fundos-imobiliarios.html">Fundos Imobiliários</a></li>
+                        <li><a href="categoria/criptomoedas.html">Criptomoedas</a></li>
+                        <li><a href="categoria/financas-pessoais.html">Finanças Pessoais</a></li>
+                        <li><a href="categoria/economia.html">Economia</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> contato@investmaster.com.br</li>
+                        <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP - Brasil</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 InvestMaster - Todos os direitos reservados.</p>
+                <ul class="legal-links">
+                    <li><a href="termos-de-uso.html">Termos de Uso</a></li>
+                    <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                    <li><a href="politica-cookies.html">Política de Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/newsletter.js"></script>
+    <script src="js/articles.js"></script>
+</body>
+</html>
